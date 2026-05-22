@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDUCE</title>
+</head>
+<body>
+    <script>
+     const numeros = [10, 20, 30];
+ 
+     const total = numeros.reduce((acumulador, numero) => {
+     return acumulador + numero;
+    }, 0);
+ 
+     console.log("Suma total: ", total); // 60
+
+     // ejemplo2 
+     const notas = [7, 4, 9, 5, 6];
+ /*
+    const cantidadAprobados = notas.reduce((acumulador, nota) => {
+        if (nota >= 6) {
+        return acumulador + 1;
+    }
+ 
+    return acumulador;
+    }, 0);*/
+
+    const cantidadAprobados = notas.reduce(
+        (contador, notas) => (notas >=6 ? contador + 1: contador),0);
+    console.log("Aprobados: ", cantidadAprobados); // 3
+
+    //ejemplo 3
+
+    const productos = [
+    { nombre: "Teclado", precio: 50 },
+    { nombre: "Mouse", precio: 30 },
+    { nombre: "Monitor", precio: 20 },
+    ];
+ 
+    const precioTotal = productos.reduce(
+        (acumulador, producto) => acumulador + producto.precio, 0,);
+    console.log("precio total", precioTotal); // 10
+
+    </script>
+</body>
+</html>
